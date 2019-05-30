@@ -29,3 +29,4 @@ import './hexagon-aggregator.spec';
 import './new-grid-layer.spec';
 import './screen-grid-layer.spec';
 import './utils/scale-utils.spec';
+import './chromium-bugs.spec';
