@@ -4,12 +4,11 @@ import {DATA_URI} from '../../constants/defaults';
 
 import {
   ContourLayer,
-  GridLayer,
-  GridCellLayer,
+  CPUGridLayer,
   HexagonLayer,
   ScreenGridLayer,
-  _GPUGridLayer as GPUGridLayer,
-  _NewGridLayer as NewGridLayer
+  GPUGridLayer,
+  GridLayer
 } from '@deck.gl/aggregation-layers';
 
 export const ContourLayerDemo = createLayerDemoClass({
@@ -30,21 +29,6 @@ export const ContourLayerDemo = createLayerDemoClass({
   }
 });
 
-export const GridCellLayerDemo = createLayerDemoClass({
-  Layer: GridCellLayer,
-  dataUrl: `${DATA_URI}/hexagons.json`,
-  formatTooltip: d => `height: ${d.value * 5000}m`,
-  props: {
-    pickable: true,
-    extruded: true,
-    cellSize: 200,
-    elevationScale: 5000,
-    getPosition: d => d.centroid,
-    getColor: d => [48, 128, d.value * 255, 255],
-    getElevation: d => d.value
-  }
-});
-
 const GRID_LAYER_INFO = {
   dataUrl: `${DATA_URI}/sf-bike-parking.json`,
   formatTooltip: d => `${d.position.join(', ')}\nCount: ${d.count}`,
@@ -62,13 +46,13 @@ export const GPUGridLayerDemo = createLayerDemoClass({
   ...GRID_LAYER_INFO
 });
 
-export const NewGridLayerDemo = createLayerDemoClass({
-  Layer: NewGridLayer,
+export const GridLayerDemo = createLayerDemoClass({
+  Layer: GridLayer,
   ...GRID_LAYER_INFO
 });
 
-export const GridLayerDemo = createLayerDemoClass({
-  Layer: GridLayer,
+export const CPUGridLayerDemo = createLayerDemoClass({
+  Layer: CPUGridLayer,
   ...GRID_LAYER_INFO
 });
 
