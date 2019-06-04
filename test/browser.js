@@ -43,6 +43,6 @@ enableDOMLogging({
 
 test('deck.gl', t => {
   require('./modules');
-  require('./render');
+  // require('./render');
   t.end();
 });
