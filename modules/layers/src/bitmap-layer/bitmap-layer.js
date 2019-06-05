@@ -29,7 +29,7 @@ const {fp64LowPart} = fp64;
 import vs from './bitmap-layer-vertex';
 import fs from './bitmap-layer-fragment';
 
-const DEFAULT_TEXTURE_PARAMETERS = {
+export const DEFAULT_TEXTURE_PARAMETERS = {
   [GL.TEXTURE_MIN_FILTER]: GL.LINEAR_MIPMAP_LINEAR,
   // GL.LINEAR is the default value but explicitly set it here
   [GL.TEXTURE_MAG_FILTER]: GL.LINEAR,
